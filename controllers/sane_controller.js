@@ -7,7 +7,7 @@ var sane = require("../models/index.js");
 router.get("/", function(req, res) {
     // sane.all(function(data){
         console.log("hit / page")
-        res.end();
+        res.render("index", );
     // })
 })
 
