@@ -3,7 +3,7 @@ CREATE DATABASE sane_db;
 USE sane_db;
 
 CREATE TABLE sites (
-id INT NOT NULL,
+id INT AUTO_INCREMENT NOT NULL,
 country VARCHAR (255),
 state VARCHAR (255),
 county VARCHAR (255),	
