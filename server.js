@@ -1,5 +1,5 @@
 var express = require("express");
-var login = require("./routes/loginRoutes");
+// var login = require("./routes/loginRoutes");
 var PORT = process.env.PORT || 8081;
 var path = require("path");
 // var bodyParser = require("body-parser");
@@ -35,8 +35,8 @@ app.use(routes);
 
 var router = express.Router();
 
-require("./routes/apiRoutes.js");
-require("./routes/loginRoutes.js");
+// require("./routes/apiRoutes.js");
+// require("./routes/loginRoutes.js");
 
 // test route
 // router.get('/api/register', function(req, res) {
