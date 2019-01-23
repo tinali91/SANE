@@ -4,6 +4,17 @@ var router = express.Router();
 
 var sane = require("../models/index.js");
 
+// test route
+router.get('/api/register', function(req, res) {
+    console.log("hit /api/register page");
+    res.json({ message: 'welcome to our uploaded api' });
+});
+
+router.get("/api/user", function(req, res) {
+    console.log("hit /api/user page");
+    res.json({message: "new user to api/user"});
+})
+
 router.get("/", function(req, res) {
     // sane.all(function(data){
         console.log("hit / page")
@@ -38,5 +49,10 @@ router.get("/create", function(req, res) {
         res.render("create", );
     // })
 })
+
+//route to handle user registration
+// router.post('/register',login.register);
+// router.post('/login',login.login)
+// app.use('/api', router);
 
 module.exports = router;
