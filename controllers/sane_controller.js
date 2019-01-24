@@ -39,4 +39,9 @@ router.get("/create", function(req, res) {
     // })
 })
 
+router.get("/register", function(req, res) {
+    console.log("hit /register page")
+    res.render("register", );
+ })
+
 module.exports = router;
