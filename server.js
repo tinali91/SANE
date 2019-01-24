@@ -2,6 +2,7 @@ var express = require("express");
 var login = require("./routes/loginRoutes");
 var PORT = process.env.PORT || 8081;
 var path = require("path");
+var db = require("./models");
 // var bodyParser = require("body-parser");
 
 
@@ -33,22 +34,10 @@ var routes = require("./controllers/sane_controller.js");
 
 app.use(routes);
 
-var router = express.Router();
-
-require("./routes/apiRoutes.js");
-require("./routes/loginRoutes.js");
-
-// test route
-// router.get('/api/register', function(req, res) {
-//     res.json({ message: 'welcome to our upload module apis' });
-// });
-//route to handle user registration
-// router.post('/register',login.register);
-// router.post('/login',login.login)
-app.use('/api', router);
-
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
- // Log (server-side) when our server has started
- console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync().then(function() {
+    app.listen(PORT, function() {
+    // Log (server-side) when our server has started
+    console.log("Server listening on: http://localhost:" + PORT);
+    });
 });
