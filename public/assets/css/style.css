@@ -15,5 +15,28 @@
 
 #sane-header {
   margin: 0;
+  color: #944e32 !important;
 }
+
+body {
+  background-color: #f9f9f9;
+}
+
+.light-blue.lighten-1 {
+  background-color: #70abaf !important;
+}
+
+.material-icons {
+  color: #944e32;
+}
+
+#download-button {
+  background-color: #70abaf !important;
+  
+}
+
+.page-footer {
+  background-color: #944e32 !important;
+}
+
 
