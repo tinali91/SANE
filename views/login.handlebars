@@ -6,7 +6,7 @@
             <h5 class="header col s12 light">Provider Log In</h5>
         </div>
         <div class="container">
-            <form action="/authenticate" method="post"></form>
+            <form action="/api/user" method="post"></form>
             <div class="row">
                 <div class="col s3"></div>
                 <div class="input-field col s6">
@@ -14,23 +14,24 @@
                     <label for="email">Email</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s3"></div>
-                <div class="input-field col s6">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                    <a class="reset-password" href="#">Forgot your pasword?</a>
+        </div>
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="input-field col s6">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+                <a class="reset-password" href="#">Forgot your pasword?</a>      
                     <div class="form-actions">
                         <br>
-                        {{!-- <a class="btn btn-primary" href="/signup"> Sign Up!</a> --}}
+                        <a class="btn btn-primary" href="./register.handlebars"> Sign Up!</a>
                         <a href="/provider">
-                            <button type="submit" class="btn btn-success pull-right"> Sign In</button>
+                            <button type="submit" class="btn btn-success pull-right" id="submit"> Sign In</button>
                         </a>
                         <br>
                     </div>
-                </div>
             </div>
-            </form>
         </div>
+        </form>
+    </div>
     </center>
 </body>
