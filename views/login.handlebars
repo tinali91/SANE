@@ -1,37 +1,34 @@
 {{!-- This page will display the login for providers --}}
-
+{{!-- 
 <body>
-    <center>
-        <div class="block-header">
-            <h5 class="header col s12 light">Provider Log In</h5>
-        </div>
-        <div class="container">
-            <form action="/api/user" method="post"></form>
-            <div class="row">
-                <div class="col s3"></div>
-                <div class="input-field col s6">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s3"></div>
-            <div class="input-field col s6">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-                <a class="reset-password" href="#">Forgot your pasword?</a>      
-                    <div class="form-actions">
-                        <br>
-                        <a class="btn btn-primary" href="./register.handlebars"> Sign Up!</a>
-                        <a href="/provider">
-                            <button type="submit" class="btn btn-success pull-right" id="submit"> Sign In</button>
-                        </a>
-                        <br>
-                    </div>
-            </div>
-        </div>
-        </form>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      </div>
     </div>
-    </center>
-</body>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Provider Login Form</h2>
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <br />
+        <p>Or sign up <a href="/">here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/login.js"></script>
+
+</body> --}}

@@ -42,4 +42,8 @@ body {
   background-color: #944e32 !important;
 }
 
+form.signup,
+form.login {
+  margin-top: 50px;
+}
 
