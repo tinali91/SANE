@@ -16,6 +16,7 @@ passport.use(new LocalStrategy(
         email: email
       }
     }).then(function(dbUser) {
+      console.log("in the findOne on passport.js");
       // If there's no user with the given email
       if (!dbUser) {
         return done(null, false, {
