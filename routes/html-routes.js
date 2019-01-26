@@ -39,7 +39,7 @@ module.exports = function(app) {
   });
 
   app.get("/update", 
-  isAuthenticated, 
+  // isAuthenticated, 
   function(req, res) {
         console.log("hit /update page")
         res.render("update", );
