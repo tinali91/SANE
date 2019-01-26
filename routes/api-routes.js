@@ -40,29 +40,21 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the provider page.
   // Otherwise the user will be sent an error
-// app.get('/', function(req, res){
-//   res.render('index', { message: req.flash('info') });
+
+// app.post('/api/login', function(req, res, next) {
+//   passport.authenticate('local', function(err, user, info) {
+//     console.log("hitting /api/login after incorrect password");
+//     if (err) { return next(err); }
+//     if (!user) { 
+//         res.status(401);
+//         res.end(info.message);
+//         return;
+//     }
+//     res.redirect("/provider")
+//   })(req, res, next);
 // });
 
-// app.get('/flash', function(req, res){
-//   req.flash('info', 'Hi there!')
-//   res.redirect('/');
-// });
-
-// app.get('/no-flash', function(req, res){
-//   res.redirect('/');
-// });
-
-// app.get('/multiple-flash', function(req, res){
-//     req.flash('info', ['Welcome', 'Please Enjoy']);
-//     res.redirect('/');
-// })
-
-  app.post('/api/login',
-  // passport.authenticate('local', { successRedirect: '/provider',
-  //                                  failureRedirect: '/',
-  //                                  failureFlash: true }),
-// ); 
+  app.post('/api/login', 
   passport.authenticate("local"), 
   function(req, res) {
     console.log("hit /api/login page");
@@ -105,20 +97,21 @@ module.exports = function(app) {
     })
   });
 
-};
+
 
 //***********setting up for delete on sites********
 
   //   // this route should delete a contact from the table, if the id matches the ':id' url param
-  //   app.delete("/api/contacts/:id", function(req, res) {
-  //     console.log("hit delete /api/contacts page");
-  //     db.Contact.destroy({
-  //         where: {
-  //             id: req.params.id
-  //         }
-  //     }).then(function(dbContact) {
-  //         res.json(dbContact);
-  //     }).catch(function(err) {
-  //         res.json(err);
-  //     })
-  // });
+    app.delete("/api/contacts/:id", function(req, res) {
+      console.log("hit delete /api/contacts page");
+      db.Contact.destroy({
+          where: {
+              id: req.params.id
+          }
+      }).then(function(dbContact) {
+          res.json(dbContact);
+      }).catch(function(err) {
+          res.json(err);
+      })
+  });
+};
