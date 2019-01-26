@@ -6,11 +6,9 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-
-        console.log("hit / page")
-        res.render("index", );
-    // })
-})
+    console.log("hit / page")
+    res.render("index", );
+  })
 
   app.get("/signup", function(req, res) {
      console.log("hit /sigup page"); 
@@ -30,12 +28,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
   console.log("hit /provider page");
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/provider", 
-  // isAuthenticated, 
+  isAuthenticated, 
   function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/provider.html"));
+    console.log("signed in");
+    res.render("provider", );
   });
 
   app.get("/update", 
@@ -43,13 +43,20 @@ module.exports = function(app) {
   function(req, res) {
         console.log("hit /update page")
         res.render("update", );
-})
+  })
 
   app.get("/create", 
   // isAuthenticated, 
   function(req, res) {
         console.log("hit /create page")
         res.render("create", );
-})
+  })
+
+  // Route for logging user out
+  app.get("/logout", function(req, res) {
+    console.log("hit /logout page");
+    req.logout();
+    res.redirect("/");
+  });
 
 };

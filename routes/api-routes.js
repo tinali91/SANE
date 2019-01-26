@@ -2,7 +2,40 @@
 var db = require("../models");
 var passport = require("../config/passport");
 
+//************set up for signup and users********
 module.exports = function(app) {
+//findAll users 
+  app.get("/api/user_data/all", function(req, res) {
+    console.log("hit /api/user_data/all page")
+    db.User.findAll({
+ 
+    }).then(function(dbUser) {
+        res.json(dbUser);
+    }).catch(function(err) {
+        console.log(err);
+        res.json(err);
+    })
+  });
+//create new users
+  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+  // otherwise send back an error
+  app.post("/api/signup", function(req, res) {
+    console.log("hit /api/signup page");
+    db.User.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password
+    }).then(function(dbUser) {
+      res.redirect(307, "/api/login");
+      // res.json(dbUser);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+      // res.status(422).json(err.errors[0].message);
+    })
+  });
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the provider page.
   // Otherwise the user will be sent an error
@@ -14,33 +47,6 @@ module.exports = function(app) {
     // So we're sending the user back the route to the provider page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     res.json("/provider");
-  });
-
-  // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
-  app.post("/api/signup", function(req, res) {
-    console.log("hit /api/signup page");
-    console.log(req.body);
-    db.User.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      email: req.body.email,
-      password: req.body.password
-    }).then(function() {
-      res.redirect(307, "/api/login");
-    }).catch(function(err) {
-      console.log(err);
-      res.json(err);
-      // res.status(422).json(err.errors[0].message);
-    });
-  });
-
-  // Route for logging user out
-  app.get("/logout", function(req, res) {
-    console.log("hit /logout page");
-    req.logout();
-    res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side
@@ -62,22 +68,34 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/api/user_data/all", function(req, res) {
-    db.User.findAll({}).then(function(user) {
-        res.json(user);
-        console.log("hit /api/user_data/all page")
-    })
-})
-
   app.get("/api/user_data/:email", function(req, res) {
+    console.log("hit /api/user_data/:email page");
     db.User.findOne({
         where: {
           email: req.params.email
         }
-    }).then(function(user) {
-        res.json(user);
+    }).then(function(dbUser) {
+        res.json(dbUser);
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
     })
-    console.log("hit /api/user_data/:email page");
-});
-
+  });
+  
 };
+
+//***********setting up for delete on sites********
+
+  //   // this route should delete a contact from the table, if the id matches the ':id' url param
+  //   app.delete("/api/contacts/:id", function(req, res) {
+  //     console.log("hit delete /api/contacts page");
+  //     db.Contact.destroy({
+  //         where: {
+  //             id: req.params.id
+  //         }
+  //     }).then(function(dbContact) {
+  //         res.json(dbContact);
+  //     }).catch(function(err) {
+  //         res.json(err);
+  //     })
+  // });
