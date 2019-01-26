@@ -7,7 +7,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   app.get("/", function(req, res) {
     console.log("hit / page")
-    res.render("index", );
+    res.render("index");
   })
 
   app.get("/signup", function(req, res) {
@@ -57,6 +57,12 @@ module.exports = function(app) {
     console.log("hit /logout page");
     req.logout();
     res.redirect("/");
+  });
+
+  // Route for user user out
+  app.get("/sane_results", function(req, res) {
+    console.log("hit /sane_results page");
+    res.render("sane_results.handlebars", );
   });
 
 };
