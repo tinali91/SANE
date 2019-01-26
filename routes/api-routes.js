@@ -40,7 +40,7 @@ module.exports = function(app) {
   // If the user has valid login credentials, send them to the provider page.
   // Otherwise the user will be sent an error
   app.post("/api/login", 
-  // passport.authenticate("local"), 
+  passport.authenticate("local"), 
   function(req, res) {
     console.log("hit /api/login page");
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
@@ -81,7 +81,7 @@ module.exports = function(app) {
       res.json(err);
     })
   });
-  
+
 };
 
 //***********setting up for delete on sites********
