@@ -1,8 +1,52 @@
 {{!-- This is where the provider can create a new record --}}
 
-<body>
+<div>
+	<a class="nav-button btn btn-primary" href="/site/new" role="button">Add New Site</a>
+	<h1> Sites:</h1>
+</div>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th>Country</th>
+			<th>State</th>
+			<th>County</th>
+			<th>City</th>
+			<th>Facility</th>
+            <th>Address</th>
+			<th>Zip</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>Phone #1</th>
+            <th>Phone #2</th>
+			<th>Website</th>
+			<th>Additional Info</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{{#each sites}}
+			<tr data-id={{id}}> {{!--//allows us to delete by id --}}
+				<td> {{county}} </td>
+				<td> {{state}} </td>
+				<td> {{county}} </td>
+				<td> {{zip}} </td>
+				<td> {{latitude}} </td>
+                <td> {{logitude}} </td>
+				<td> {{phone_1}} </td>
+				<td> {{phone_2}} </td>
+				<td> {{website}} </td>
+				<td> {{additional_info}} </td>
+				<td><span class="delete glyphicon glyphicon-remove"></span></td> //needed for delete
+			</tr>
+		{{/each}}
+		{{!-- Our Handlebars code goes here! --}}
+		{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+	</tbody>
+</table>
       <!-- <nav class="navbar navbar-default"> -->
-  <div class="container-fluid">
+  {{!-- <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/logout">
         Logout
@@ -60,5 +104,4 @@
             </form>
         </div>
 
-    </div>
-</body>
+    </div> --}}
