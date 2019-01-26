@@ -97,6 +97,21 @@ module.exports = function(app) {
     })
   });
 
+  // Update contact
+ app.put("/api/contacts/:id", function(req, res) {
+  console.log("hit update /api/contacts page");
+  db.Contact.update(req.body,
+    {
+      where: {
+        id: req.body.id
+      }
+    })
+  .then(function(dbContact) {
+    res.json(dbContact);
+  }).catch(function(err) {
+    res.json(err);
+})
+});
 
 
 //***********setting up for delete on sites********
