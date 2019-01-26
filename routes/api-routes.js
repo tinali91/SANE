@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+// var flash = require('connect-flash');
 
 //************set up for signup and users********
 module.exports = function(app) {
@@ -28,7 +29,7 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password
     }).then(function(dbUser) {
-      res.redirect(307, "/api/login");
+      res.render("login");
       // res.json(dbUser);
     }).catch(function(err) {
       console.log(err);
@@ -39,7 +40,29 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the provider page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", 
+// app.get('/', function(req, res){
+//   res.render('index', { message: req.flash('info') });
+// });
+
+// app.get('/flash', function(req, res){
+//   req.flash('info', 'Hi there!')
+//   res.redirect('/');
+// });
+
+// app.get('/no-flash', function(req, res){
+//   res.redirect('/');
+// });
+
+// app.get('/multiple-flash', function(req, res){
+//     req.flash('info', ['Welcome', 'Please Enjoy']);
+//     res.redirect('/');
+// })
+
+  app.post('/api/login',
+  // passport.authenticate('local', { successRedirect: '/provider',
+  //                                  failureRedirect: '/',
+  //                                  failureFlash: true }),
+// ); 
   passport.authenticate("local"), 
   function(req, res) {
     console.log("hit /api/login page");

@@ -39,7 +39,7 @@ $(document).ready(function() {
         password: password
       }).then(function(data) {
         window.location.replace(data);
-        location.href = "/login";
+        location.href = "login";
         // If there's an error, handle it by throwing up a bootstrap alert
       }).catch(handleLoginErr);
     }

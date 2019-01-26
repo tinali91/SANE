@@ -5,6 +5,7 @@ var passport = require("./config/passport");
 var PORT = process.env.PORT || 8081;
 var db = require("./models");
 var app = express();
+// var flash = require('connect-flash');
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
@@ -30,6 +31,25 @@ require("./routes/api-routes.js")(app);
 // Import routes and give the server access to them.
 // var routes = require("./controllers/sane_controller.js");
 
+// app.use(flash());
+
+// app.get('/', function(req, res){
+//   res.render('index', { message: req.flash('info') });
+// });
+
+// app.get('/flash', function(req, res){
+//   req.flash('info', 'Hi there!')
+//   res.redirect('/');
+// });
+
+// app.get('/no-flash', function(req, res){
+//   res.redirect('/');
+// });
+
+// app.get('/multiple-flash', function(req, res){
+//     req.flash('info', ['Welcome', 'Please Enjoy']);
+//     res.redirect('/');
+// })
 // app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
