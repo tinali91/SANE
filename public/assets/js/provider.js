@@ -5,4 +5,4 @@ $(document).ready(function() {
       $(".provider-name").text(data.email);
     });
   });
-  
+

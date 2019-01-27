@@ -1,18 +1,12 @@
 {{!-- This is where the provider can create a new record --}}
-<div class="container-fluid">
-<div class="navbar-header">
-    <a class="navbar-brand" href="/logout">
-    Logout
-    </a>
-</div>
-</div>
+
 <div>
-	<a class="nav-button btn btn-primary" href="/site/new" role="button">Add New Site</a>
-	<h1> Sites:</h1>
+	<a class="button btn btn-primary" href="/site/new" role="button">Add New Site</a>
+	<h4> Sites:</h4>
 </div>
 
-<table class="table">
-	<thead class="thead-dark">
+<table>
+	<thead>
 		<tr>
 			<th>Country</th>
 			<th>State</th>
@@ -51,6 +45,14 @@
 		{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
 	</tbody>
 </table>
+
+<div class="row">
+<div class="logout">
+    <a class="logout" href="/logout">
+    Logout
+    </a>
+</div>
+</div>
       <!-- <nav class="navbar navbar-default"> -->
   {{!-- <div class="container-fluid">
     <div class="navbar-header">
