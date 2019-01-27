@@ -1,42 +1,55 @@
+<body>
+	<div class="container">
+		<div>
+			<h4> Sites:</h4>
+		</div>
 
-<div>
-	<h1> Sites:</h1>
-</div>
+		<div class="row">
+			<div class="col m1">
+			</div>
+			<div class="col m10">
+				<table class="striped">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Country</th>
+							<th>State</th>
+							<th>County</th>
+							<th>City</th>
+							<th>Facility</th>
+							<th>Address</th>
+							<th>Zip</th>
+							<th>Latitude</th>
+							<th>Longitude</th>
+							<th>Phone #1</th>
+							<th>Phone #2</th>
+							<th>Website</th>
+							<th>Additional Info</th>
+							<th></th>
+						</tr>
+					</thead>
 
-<table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Country</th>
-			<th>State</th>
-			<th>County</th>
-			<th>City</th>
-			<th>Facility</th>
-            <th>Address</th>
-			<th>Zip</th>
-			<th>Latitude</th>
-			<th>Longitude</th>
-			<th>Phone #1</th>
-            <th>Phone #2</th>
-			<th>Website</th>
-			<th>Additional Info</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
+					<tbody>
+						{{#each sites}}
+						<tr>
+							<td> {{county}} </td>
+							<td> {{state}} </td>
+							<td> {{county}} </td>
+							<td> {{zip}} </td>
+							<td> {{latitude}} </td>
+							<td> {{logitude}} </td>
+							<td> {{phone_1}} </td>
+							<td> {{phone_2}} </td>
+							<td> {{website}} </td>
+							<td> {{additional_info}} </td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+			<div class="col m1">
+			</div>
 
-		{{#each sites}}
-			<tr> 
-				<td> {{county}} </td>
-				<td> {{state}} </td>
-				<td> {{county}} </td>
-				<td> {{zip}} </td>
-				<td> {{latitude}} </td>
-                <td> {{logitude}} </td>
-				<td> {{phone_1}} </td>
-				<td> {{phone_2}} </td>
-				<td> {{website}} </td>
-				<td> {{additional_info}} </td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
+		</div>
+	</div>
+</body>
