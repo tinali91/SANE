@@ -1,58 +1,71 @@
 {{!-- This is where the provider can create a new record --}}
+{{!-- Grab update table from the create page --}}
+{{!-- Fix the logout button --}}
+{{!-- move this table to the provider page --}}
+{{!-- Redirect to the provider page --}}
 
-<div>
-	<a class="button btn btn-primary" href="/site/new" role="button">Add New Site</a>
-	<h4> Sites:</h4>
-</div>
+{{!-- Providers can update their existing information here --}}
+      <!-- <nav class="navbar navbar-default"> -->
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+<!-- </nav> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3" id="update-header">
+        <h2>Provider Update Form <span class="provider-name"></span></h2>
+      </div>
+    </div>
+  </div>
+    <div class="container">
+        <h5 class="header col s12 light update-info">Please enter your contact information below.</h5>
+        <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="hospital" type="text" class="validate">
+                        <label for="hospital">Name of hospital</label>
+                    </div>
+                </div>
 
-<table>
-	<thead>
-		<tr>
-			<th>Country</th>
-			<th>State</th>
-			<th>County</th>
-			<th>City</th>
-			<th>Facility</th>
-            <th>Address</th>
-			<th>Zip</th>
-			<th>Latitude</th>
-			<th>Longitude</th>
-			<th>Phone #1</th>
-            <th>Phone #2</th>
-			<th>Website</th>
-			<th>Additional Info</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="address" type="text" class="validate">
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+                      <div class="row">
+                    <div class="input-field col s12">
+                        <input id="website" type="text" class="validate">
+                        <label for="website">Website</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-		{{#each sites}}
-			<tr data-id={{id}}> {{!--//allows us to delete by id --}}
-				<td> {{county}} </td>
-				<td> {{state}} </td>
-				<td> {{county}} </td>
-				<td> {{zip}} </td>
-				<td> {{latitude}} </td>
-                <td> {{logitude}} </td>
-				<td> {{phone_1}} </td>
-				<td> {{phone_2}} </td>
-				<td> {{website}} </td>
-				<td> {{additional_info}} </td>
-				<td><span class="delete glyphicon glyphicon-remove"></span></td> //needed for delete
-			</tr>
-		{{/each}}
-		{{!-- Our Handlebars code goes here! --}}
-		{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
-	</tbody>
-</table>
+    </div>
 
-<div class="row">
-<div class="logout">
-    <a class="logout" href="/logout">
-    Logout
-    </a>
-</div>
-</div>
       <!-- <nav class="navbar navbar-default"> -->
   {{!-- <div class="container-fluid">
     <div class="navbar-header">

@@ -41,6 +41,8 @@ body {
 
 .btn {
   background-color: #70abaf !important;
+  margin: 3%;
+
 }
 
 .page-footer {
@@ -50,6 +52,11 @@ body {
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+h4 {
+  clear: both;
+  padding: 2%;
 }
 
 
