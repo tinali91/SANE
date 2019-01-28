@@ -5,124 +5,133 @@
 {{!-- Redirect to the provider page --}}
 
 {{!-- Providers can update their existing information here --}}
-      <!-- <nav class="navbar navbar-default"> -->
-  <div class="container-fluid">
+<!-- <nav class="navbar navbar-default"> -->
+<div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+        <a class="navbar-brand" href="/logout">
+            Logout
+        </a>
     </div>
-  </div>
+</div>
 <!-- </nav> -->
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3" id="update-header">
-        <h2>Provider Update Form <span class="provider-name"></span></h2>
-      </div>
-    </div>
-  </div>
-    <div class="container">
-        <h5 class="header col s12 light update-info">Please enter your contact information below.</h5>
-        <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="hospital" type="text" class="validate">
-                        <label for="hospital">Name of hospital</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="address" type="text" class="validate">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-                      <div class="row">
-                    <div class="input-field col s12">
-                        <input id="website" type="text" class="validate">
-                        <label for="website">Website</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-            </form>
+        <div class="col-md-6 col-md-offset-3" id="update-header">
+            <h2>New Site Input<span class="provider-name"></span></h2>
         </div>
+    </div>
+</div>
+<div class="container">
+    <h5 class="header col s12 light update-info">Please enter your contact information below.</h5>
+    <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="hospital" type="text" class="validate">
+                    <label for="hospital">Name of hospital</label>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="address" type="text" class="validate">
+                    <label for="address">Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="website" type="text" class="validate">
+                    <label for="website">Website</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="other_info" type="textarea" class="validate">
+                    <label for="other_info">Additional information</label>
+                </div>
+            </div>
+            <button id="addSite" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
     </div>
 
-      <!-- <nav class="navbar navbar-default"> -->
-  {{!-- <div class="container-fluid">
+</div>
+
+<!-- <nav class="navbar navbar-default"> -->
+{{!-- <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+        <a class="navbar-brand" href="/logout">
+            Logout
+        </a>
     </div>
-  </div>
+</div>
 <!-- </nav> -->
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Provider Create Form <span class="provider-name"></span></h2>
-      </div>
-    </div>
-  </div>
-    <div class="container">
-        <h5 class="header col s12 light">Please enter your contact information below.</h5>
-        <h5 class="header col s12 light">This information will be shared with those searching for a SANE.</h5>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="first_name" type="text" class="validate">
-                        <label for="first_name">First Name</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="last_name" type="text" class="validate">
-                        <label for="last_name">Last Name</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="hospital" type="text" class="validate">
-                        <label for="hospital">Name of hospital</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="address" type="text" class="validate">
-                        <label for="address">Address</label>
-                    </div>
-                </div>
-                      <div class="row">
-                    <div class="input-field col s12">
-                        <input id="website" type="text" class="validate">
-                        <label for="website">Website</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-            </form>
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Provider Create Form <span class="provider-name"></span></h2>
         </div>
+    </div>
+</div>
+<div class="container">
+    <h5 class="header col s12 light">Please enter your contact information below.</h5>
+    <h5 class="header col s12 light">This information will be shared with those searching for a SANE.</h5>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="first_name" type="text" class="validate">
+                    <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="last_name" type="text" class="validate">
+                    <label for="last_name">Last Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="hospital" type="text" class="validate">
+                    <label for="hospital">Name of hospital</label>
+                </div>
+            </div>
 
-    </div> --}}
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="address" type="text" class="validate">
+                    <label for="address">Address</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="website" type="text" class="validate">
+                    <label for="website">Website</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div> --}}
