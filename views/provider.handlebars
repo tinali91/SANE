@@ -5,19 +5,82 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h4>Welcome <span class="provider-name"></span></h4>
+        <h4>Welcome <span id="first_name"></span></h4>
       </div>
     </div>
   </div>
+
+{{!-- PART OF MVP, MUST HAVE WORKING --}}
+{{!-- THis will link to the create page --}}
+  <button>Create Entry</button> 
 
 {{!-- Logout --}}
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/logout">
-        Logout
+        <button>Logout</button>
       </a>
     </div>
   </div>
 
-  
+{{!-- we need to write a descrip about what they can do --}}
+{{!-- This should ping the db_sites API to pull back records --}}
+{{!-- The records should have buttons "DELETE" "UPDATE" --}}
 
+
+<div>
+	<a class="button btn btn-primary" href="/site/new" role="button">Add New Site</a>
+	<h4> Sites:</h4>
+</div>
+
+
+<table>
+	<thead>
+		<tr>
+			<th>Country</th>
+			<th>State</th>
+			<th>County</th>
+			<th>City</th>
+			<th>Facility</th>
+            <th>Address</th>
+			<th>Zip</th>
+			<th>Latitude</th>
+			<th>Longitude</th>
+			<th>Phone #1</th>
+            <th>Phone #2</th>
+			<th>Website</th>
+			<th>Additional Info</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{{#each sites}}
+			<tr data-id={{id}}> {{!--//allows us to delete by id --}}
+				<td> {{county}} </td>
+				<td> {{state}} </td>
+				<td> {{county}} </td>
+				<td> {{zip}} </td>
+				<td> {{latitude}} </td>
+                <td> {{logitude}} </td>
+				<td> {{phone_1}} </td>
+				<td> {{phone_2}} </td>
+				<td> {{website}} </td>
+				<td> {{additional_info}} </td>
+				<td><span class="delete glyphicon glyphicon-remove"></span></td> //needed for delete
+			</tr>
+		{{/each}}
+		{{!-- Our Handlebars code goes here! --}}
+		{{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
+	</tbody>
+</table>
+
+
+
+<div class="row">
+<div class="logout">
+    <a class="logout" href="/logout">
+    Logout
+    </a>
+</div>
+</div>
