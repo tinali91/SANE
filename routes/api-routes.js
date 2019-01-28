@@ -81,6 +81,13 @@ module.exports = function (app) {
         id: req.user.id
       });
     }
+
+    // db.Site.findAll({})
+    //   .then(function (dbResults) {
+    //     console.log(dbResults);
+    //     res.json(dbResults);
+    //   })
+
   });
 
   app.get("/api/user_data/:email", function (req, res) {
@@ -129,5 +136,15 @@ module.exports = function (app) {
       res.json(err);
     })
   });
+
+  // This will grab the data from the sites table
+
+  // app.get("/api/sane_results", function (req, res) {
+  //   db.Site.findAll({}).then(function(dbResults) {
+  //     console.log(dbResults);
+  //     res.json(dbResults);
+  //   })
+  // })
 };
+
 

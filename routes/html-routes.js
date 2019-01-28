@@ -40,7 +40,21 @@ module.exports = function (app) {
     // isAuthenticated, 
     function (req, res) {
       console.log("signed in");
-      res.render("provider");
+      db.Site.findAll({
+        attributes: [
+          "facility",
+          "county",
+          "city",
+          "zip",
+          "phone_1",
+          "phone_2",
+          "website",
+          "additional_info"
+        ]
+      }).then(function(dbSiteResults) {
+        res.render("provider", {sites: dbSiteResults});
+        console.log(dbSiteResults);
+      });
     });
 
   app.get("/update",
@@ -67,7 +81,22 @@ module.exports = function (app) {
   // Route for user user out
   app.get("/sane_results", function (req, res) {
     console.log("hit /sane_results page");
-    res.render("sane_results");
+    // res.render("sane_results");
+    db.Site.findAll({
+      attributes: [
+        "facility",
+        "county",
+        "city",
+        "zip",
+        "phone_1",
+        "phone_2",
+        "website",
+        "additional_info"
+      ]
+    }).then(function(dbSiteResults) {
+      res.render("sane_results", {sites: dbSiteResults});
+      console.log(dbSiteResults);
+    })
   });
 };
 // *******************************************************
