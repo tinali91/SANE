@@ -67,7 +67,7 @@ module.exports = function (app) {
   // Route for user user out
   app.get("/sane_results", function (req, res) {
     console.log("hit /sane_results page");
-    res.render("sane_results.handlebars");
+    res.render("sane_results");
   });
 };
 // *******************************************************
