@@ -1,59 +1,48 @@
+{{!-- This will look identical to the provider page exect the buttons --}}
+{{!-- ***Need to finesse the database fields*** --}}
+<div class="container">
+	<div>
+		<h4> Sites:</h4>
+	</div>
 
-<div>
-	<h1> Sites:</h1>
+	<div class="row">
+		<div class="col m1">
+		</div>
+		<div class="col m10">
+			<table class="striped">
+				<thead>
+					<tr>
+						<th>Facility</th>
+						<th>Address</th>
+						<th>City/Town</th>
+						<th>County</th>
+						<th>Zip</th>
+						<th>Phone #1</th>
+						<th>Phone #2</th>
+						<th>Website</th>
+						<th>Additional Info</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					{{#each sites}}
+					<tr>
+						<td> {{this.facility}} </td>
+						<td> {{this.address}} </td>
+						<td> {{this.city}} </td>
+						<td> {{this.county}} </td>
+						<td> {{this.zip}} </td>
+						<td> {{this.phone_1}} </td>
+						<td> {{this.phone_2}} </td>
+						<td> <a href="{{this.website}}">{{this.website}}</a></td>
+						<td> {{this.additional_info}} </td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<div class="col m1">
+		</div>
+
+	</div>
 </div>
-
-<table class="table">
-	<thead class="thead-dark">
-		<tr>
-			<th>Country</th>
-			<th>State</th>
-			<th>County</th>
-			<th>City</th>
-			<th>Facility</th>
-            <th>Address</th>
-			<th>Zip</th>
-			<th>Latitude</th>
-			<th>Longitude</th>
-			<th>Phone #1</th>
-            <th>Phone #2</th>
-			<th>Website</th>
-			<th>Additional Info</th>
-			<th></th>
-		</tr>
-	</thead>
-	<tbody>
-
-		{{#each sites}}
-			<tr> 
-				<td> {{county}} </td>
-				<td> {{state}} </td>
-				<td> {{county}} </td>
-				<td> {{zip}} </td>
-				<td> {{latitude}} </td>
-                <td> {{logitude}} </td>
-				<td> {{phone_1}} </td>
-				<td> {{phone_2}} </td>
-				<td> {{website}} </td>
-				<td> {{additional_info}} </td>
-			</tr>
-		{{/each}}
-	</tbody>
-</table>
-
-//git 
-<script>
-  app.get("/api/sane_results", function(req, res) {
-    console.log("hit /api/sane_results");
-    db.Site.findAll({
-
-    }).then(function(dbSite) {
-      console.log(dbSite, "dbSite");
-      res.send(dbSite);
-    }).catch(function(err) {
-    console.log(err);
-
-    res.json(err);
-    })
-  });
-  </script>

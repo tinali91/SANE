@@ -13,9 +13,14 @@
 	font-size: inherit;
 }
 
-#sane-header {
-  margin: 0;
+#sane-header, #update-header, h2 {
+  margin: 0 !important;
   color: #944e32 !important;
+}
+
+.update-info {
+  padding: 2px;
+  margin: 2px;
 }
 
 body {
@@ -36,6 +41,8 @@ body {
 
 .btn {
   background-color: #70abaf !important;
+  margin: 3%;
+
 }
 
 .page-footer {
@@ -46,4 +53,10 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+h4 {
+  clear: both;
+  padding: 2%;
+}
+
 
