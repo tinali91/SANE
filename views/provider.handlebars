@@ -1,25 +1,26 @@
 {{!-- This is the form where providers can view their information and update it. --}}
 
-
-{{!-- Welcome message for providers, displayed after successful login --}}
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <h4>Welcome <span id="first_name"></span></h4>
+        <h2>Welcome <span id="first_name"></span></h2>
     </div>
   </div>
-
-
   {{!-- PART OF MVP, MUST HAVE WORKING --}}
-  {{!-- THis will link to the create page --}}
-
-  <div>
-    <a class="button btn btn-primary" href="/create" role="button">Add New Site</a>
+  <div class="row">
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/update" role="button">Update Site</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/create" role="button">New Site</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
+        </div>
   </div>
-  <div>
-    <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
-  </div>
-
 </div>
 
 {{!-- we need to write a descrip about what they can do --}}

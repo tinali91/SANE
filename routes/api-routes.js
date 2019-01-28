@@ -1,11 +1,9 @@
-// Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
-// var flash = require('connect-flash');
 
-//************set up for signup and users********
+//************set up for signup and providers********
 module.exports = function (app) {
-  //findAll users 
+
   app.get("/api/user_data/all", function (req, res) {
     console.log("hit /api/user_data/all page")
     db.User.findAll({
@@ -17,10 +15,9 @@ module.exports = function (app) {
       res.json(err);
     })
   });
-  //create new users
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-  // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-  // otherwise send back an error
+  // how we configur Sequelize User Model. If user created successfully, proceed to log the user in, otherwise send err
   app.post("/api/signup", function (req, res) {
     console.log("hit /api/signup page");
     db.User.create({
@@ -30,30 +27,14 @@ module.exports = function (app) {
       password: req.body.password
     }).then(function (dbUser) {
       res.render("login");
-      // res.json(dbUser);
     }).catch(function (err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
     })
   });
+
   // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the provider page.
-  // Otherwise the user will be sent an error
-
-  // app.post('/api/login', function(req, res, next) {
-  //   passport.authenticate('local', function(err, user, info) {
-  //     console.log("hitting /api/login after incorrect password");
-  //     if (err) { return next(err); }
-  //     if (!user) { 
-  //         res.status(401);
-  //         res.end(info.message);
-  //         return;
-  //     }
-  //     res.redirect("/provider")
-  //   })(req, res, next);
-  // });
-
+  // If the user has valid login credentials, send them to the provider page otherwise sent err
   app.post('/api/login',
     passport.authenticate("local"),
     function (req, res) {
@@ -81,13 +62,6 @@ module.exports = function (app) {
         id: req.user.id
       });
     }
-
-    // db.Site.findAll({})
-    //   .then(function (dbResults) {
-    //     console.log(dbResults);
-    //     res.json(dbResults);
-    //   })
-
   });
 
   app.get("/api/user_data/:email", function (req, res) {
@@ -104,28 +78,13 @@ module.exports = function (app) {
     })
   });
 
-  // Update contact
-  app.put("/api/contacts/:id", function (req, res) {
-    console.log("hit update /api/contacts page");
-    db.Contact.update(req.body,
-      {
-        where: {
-          id: req.body.id
-        }
-      })
-      .then(function (dbContact) {
-        res.json(dbContact);
-      }).catch(function (err) {
-        res.json(err);
-      })
-  });
-
+  //************set up for site********
   app.get("/api/sane_results", function(req, res) {
     console.log("hit /api/sane_results");
     db.Site.findAll({
 
     }).then(function(dbSite) {
-      console.log(dbSite, "dbSite");
+      console.log("dbSite");
       res.json(dbSite);
     }).catch(function(err) {
     console.log(err);
@@ -134,32 +93,37 @@ module.exports = function (app) {
     })
   });
 
-
-
-  //***********setting up for delete on sites********
-
-  //   // this route should delete a contact from the table, if the id matches the ':id' url param
-  app.delete("/api/contacts/:id", function (req, res) {
-    console.log("hit delete /api/contacts page");
-    db.Contact.destroy({
+  //***********setting up for delete on site********
+  // this route should delete a contact from the table, if the id matches the ':id' url param
+  app.delete("/api/site/:id", function (req, res) {
+    console.log("hit delete /api/site page");
+    db.Site.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function (dbContact) {
-      res.json(dbContact);
+    }).then(function (dbSite) {
+      res.json(dbSite);
     }).catch(function (err) {
       res.json(err);
     })
   });
 
-  // This will grab the data from the sites table
-
-  // app.get("/api/sane_results", function (req, res) {
-  //   db.Site.findAll({}).then(function(dbResults) {
-  //     console.log(dbResults);
-  //     res.json(dbResults);
-  //   })
-  // })
+  //********for updating the site******/
+    // // Update site
+  app.put("/api/site/:id", function (req, res) {
+    console.log("hit update /api/site page");
+    db.Site.update(req.body,
+      {
+        where: {
+          id: req.body.id
+        }
+      })
+      .then(function (dbSite) {
+        res.json(dbSite);
+      }).catch(function (err) {
+        res.json(err);
+      })
+  });
 };
 
 

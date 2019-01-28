@@ -1,5 +1,5 @@
 // add contact functionality
-$("#addSite").on("submit", function(event) {
+$("#addSite").on("submit", function (event) {
     event.preventDefault();
 
     var newSite = {
@@ -21,28 +21,28 @@ $("#addSite").on("submit", function(event) {
         method: "POST",
         url: "/api/site",
         data: newSite
-    }).then(function(site) {
-        console.log("new site added", site);
+    }).then(function (site) {
+        console.log("new site added");
         location.href = "/provider";
     })
 
 })
 // filter contact by type functionality
-$("#filterSites").on("change", function() {
+$("#filterSites").on("change", function () {
     var type = $(this).val().toLowerCase();
     // alert(type);
     location.href = `/${type}`
 })
 // delete contact functionality
-$(".delete").on("click", function() {
+$(".delete").on("click", function () {
     var id = $(this).parents("tr").attr("data-id");
     // alert(id);
 
     $.ajax({
         method: "DELETE",
         url: `/api/site/${id}`
-    }).then(function(site) {
-        console.log("site deleted", site);
+    }).then(function (site) {
+        console.log("site deleted");
         location.href = "/provider";
     })
 })

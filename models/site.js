@@ -1,25 +1,20 @@
 module.exports = function(sequelize, DataTypes) {
     var Site = sequelize.define("Site", {
-        // firstName (VARCHAR, NOT NULL, between 1-30 characters)
         country: {
             type: DataTypes.STRING,
         },
-        // lastName (VARCHAR, NOT NULL, between 1-30 characters)
         state: {
             type: DataTypes.STRING,
             validate: {
                 len: [2, 2]
             }
-        },
-        // contactType (VARCHAR, Default value "Personal")       
+        },       
         county: {
             type: DataTypes.STRING,
         },
-        // phoneNumber (VARCHAR, NULL, length 10 characters, numbers only)
         city: {
             type: DataTypes.STRING,
         },
-        // emailAddress (VARCHAR, NULL, must be valid email format)
         facility: {
             type: DataTypes.STRING,
         },
@@ -52,6 +47,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.TEXT,
         }
     });
-    // be sure to return the model!
+
     return Site;
 };
