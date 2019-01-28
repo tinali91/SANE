@@ -40,3 +40,20 @@
 		{{/each}}
 	</tbody>
 </table>
+
+//git 
+<script>
+  app.get("/api/sane_results", function(req, res) {
+    console.log("hit /api/sane_results");
+    db.Site.findAll({
+
+    }).then(function(dbSite) {
+      console.log(dbSite, "dbSite");
+      res.send(dbSite);
+    }).catch(function(err) {
+    console.log(err);
+
+    res.json(err);
+    })
+  });
+  </script>

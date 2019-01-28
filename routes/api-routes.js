@@ -98,6 +98,21 @@ module.exports = function(app) {
   });
 
 
+  app.get("/api/sane_results", function(req, res) {
+    console.log("hit /api/sane_results");
+    db.Site.findAll({
+
+    }).then(function(dbSite) {
+      console.log(dbSite, "dbSite");
+      res.json(dbSite);
+    }).catch(function(err) {
+    console.log(err);
+
+    res.json(err);
+    })
+  });
+
+
 
 //***********setting up for delete on sites********
 
