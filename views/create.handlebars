@@ -6,132 +6,118 @@
 
 {{!-- Providers can update their existing information here --}}
 <!-- <nav class="navbar navbar-default"> -->
-<div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-            Logout
-        </a>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span id="first_name"></span></h2>
     </div>
+  </div>
+  {{!-- PART OF MVP, MUST HAVE WORKING --}}
+  <div class="row">
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/update" role="button">Update Site</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/create" role="button">New Site</a>
+        </div>
+        <div class="col s3">
+            <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
+        </div>
+  </div>
 </div>
 <!-- </nav> -->
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3" id="update-header">
+        <div class="col-md-6" id="update-header">
             <h2>New Site Input<span class="provider-name"></span></h2>
         </div>
     </div>
 </div>
 <div class="container">
-    <h5 class="header col s12 light update-info">Please enter your contact information below.</h5>
+    <h5 class="header col s12 light update-info">Please enter the new SANE site information below.</h5>
     <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
     <div class="row">
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                    <input id="country" type="text" class="validate">
+                    <label for="country">Country</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <input id="state" type="text" class="validate">
+                    <label for="state">State</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="county" type="text" class="validate">
+                    <label for="county">County</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="city" type="text" class="validate">
+                    <label for="city">City</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="hospital" type="text" class="validate">
-                    <label for="hospital">Name of hospital</label>
+                    <i class="material-icons prefix">healing</i>
+                    <input id="facility" type="text" class="validate">
+                    <label for="facility">Facility</label>
                 </div>
             </div>
-
             <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s9">
                     <input id="address" type="text" class="validate">
                     <label for="address">Address</label>
                 </div>
+                <div class="input-field col s3">
+                    <input id="zip" type="text" class="validate">
+                    <label for="zip">Zip</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">gps_fixed</i>
+                    <input id="latitude" type="text" class="validate">
+                    <label for="latitude">Latitude</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">gps_fixed</i>
+                    <input id="longitude" type="text" class="validate">
+                    <label for="longitude">Longitude</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone_1" type="text" class="validate">
+                    <label for="phone_1">Phone #1</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone_2" type="text" class="validate">
+                    <label for="phone_2">Phone #2</label>
+                </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
+                    <i class="material-icons prefix">public</i>
                     <input id="website" type="text" class="validate">
                     <label for="website">Website</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="other_info" class="materialize-textarea"></textarea>
+                    <label for="other_info">Additional Information</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="other_info" type="textarea" class="validate">
-                    <label for="other_info">Additional information</label>
-                </div>
-            </div>
             <button id="addSite" class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
         </form>
     </div>
-
 </div>
-
-<!-- <nav class="navbar navbar-default"> -->
-{{!-- <div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="/logout">
-            Logout
-        </a>
-    </div>
-</div>
-<!-- </nav> -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <h2>Provider Create Form <span class="provider-name"></span></h2>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <h5 class="header col s12 light">Please enter your contact information below.</h5>
-    <h5 class="header col s12 light">This information will be shared with those searching for a SANE.</h5>
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="hospital" type="text" class="validate">
-                    <label for="hospital">Name of hospital</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="address" type="text" class="validate">
-                    <label for="address">Address</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="website" type="text" class="validate">
-                    <label for="website">Website</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                </div>
-            </div>
-        </form>
-    </div>
-
-</div> --}}

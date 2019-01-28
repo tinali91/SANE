@@ -1,12 +1,5 @@
-// Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
 var db = require("../models");
-// *****************************************************************
-// Authentication database routes:
-// *****************************************************************
-
-// Requiring our custom middleware for checking if a user is logged in
-
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
@@ -34,8 +27,10 @@ module.exports = function (app) {
   });
   console.log("hit /provider page");
 
+// *****************************************************************
+// Authentication database routes:
+// *****************************************************************
   // Here we've add our isAuthenticated middleware to this route.
-  // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/provider",
     // isAuthenticated, 
     function (req, res) {
@@ -53,10 +48,10 @@ module.exports = function (app) {
         ]
       }).then(function(dbSiteResults) {
         res.render("provider", {sites: dbSiteResults});
-        console.log(dbSiteResults);
+        // console.log(dbSiteResults);
       });
     });
-
+    
   app.get("/update",
     // isAuthenticated, 
     function (req, res) {
@@ -70,6 +65,9 @@ module.exports = function (app) {
       console.log("hit /create page")
       res.render("create");
     })
+// *******************************************************
+// END authentication routes ^^^^^^
+// *******************************************************
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
@@ -78,7 +76,7 @@ module.exports = function (app) {
     res.redirect("/");
   });
 
-  // Route for user user out
+  // Route for sane user 
   app.get("/sane_results", function (req, res) {
     console.log("hit /sane_results page");
     // res.render("sane_results");
@@ -95,11 +93,9 @@ module.exports = function (app) {
       ]
     }).then(function(dbSiteResults) {
       res.render("sane_results", {sites: dbSiteResults});
-      console.log(dbSiteResults);
+      // console.log(dbSiteResults);
     })
   });
 };
-// *******************************************************
-// END authentication routes ^^^^^^
-// *******************************************************
+
 
