@@ -13,7 +13,7 @@
 	font-size: inherit;
 }
 
-#sane-header, #update-header, h2 {
+#sane-header, #update-header, h2, h3 {
   margin: 0 !important;
   color: #944e32 !important;
 }

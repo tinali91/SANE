@@ -5,9 +5,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         state: {
             type: DataTypes.STRING,
-            validate: {
-                len: [2, 2]
-            }
         },       
         county: {
             type: DataTypes.STRING,
@@ -23,9 +20,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         zip: {
             type: DataTypes.INTEGER,
-            validate: {
-                len: [5]
-            }
         },
         latitude: {
             type: DataTypes.STRING,
@@ -35,7 +29,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         phone_1: {
             type: DataTypes.STRING,
-            allowNull: false,
+            // allowNull: false,
         },
         phone_2: {
             type: DataTypes.STRING,

@@ -32,7 +32,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6" id="update-header">
-            <h2>New Site Input<span class="provider-name"></span></h2>
+            <h3>New Site Input<span class="provider-name"></span></h3>
         </div>
     </div>
 </div>
@@ -40,24 +40,24 @@
     <h5 class="header col s12 light update-info">Please enter the new SANE site information below.</h5>
     <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
     <div class="row">
-        <form class="col s12">
+        <form class="create">
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="country" type="text" class="validate">
+                    <input id="country" type="text" class="form-control" class="validate">
                     <label for="country">Country</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="state" type="text" class="validate">
+                    <input id="state" type="text" class="form-control" class="validate">
                     <label for="state">State</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="county" type="text" class="validate">
+                    <input id="county" type="text" class="form-control" class="validate">
                     <label for="county">County</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="city" type="text" class="validate">
+                    <input id="city" type="text" class="form-control" class="validate">
                     <label for="city">City</label>
                 </div>
             </div>
@@ -115,9 +115,8 @@
                     <textarea id="other_info" class="materialize-textarea"></textarea>
                     <label for="other_info">Additional Information</label>
                 </div>
-            <button id="addSite" class="btn waves-effect waves-light" type="submit" name="action">Submit
-                <i class="material-icons right">send</i>
-            </button>
+          <input type="submit" id="addSite" class="btn btn-default" value="Create Site">
+           
         </form>
     </div>
 </div>
