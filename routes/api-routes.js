@@ -5,7 +5,7 @@ var passport = require("../config/passport");
 module.exports = function (app) {
 
   app.get("/api/user_data/all", function (req, res) {
-    console.log("hit /api/user_data/all page")
+    // console.log("hit /api/user_data/all page")
     db.User.findAll({
 
     }).then(function (dbUser) {
@@ -19,7 +19,7 @@ module.exports = function (app) {
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configur Sequelize User Model. If user created successfully, proceed to log the user in, otherwise send err
   app.post("/api/signup", function (req, res) {
-    console.log("hit /api/signup page");
+    // console.log("hit /api/signup page");
     db.User.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name,
@@ -134,16 +134,16 @@ module.exports = function (app) {
 
   //********for updating the site******/
     // // Update site
-  app.put("/api/site/:id", function (req, res) {
-    console.log("hit update /api/site page");
+  app.put("/api/sane_results/:id", function (req, res) {
+    console.log("hit update /api/sane_results page");
     db.Site.update(req.body,
       {
         where: {
-          id: req.body.id
+          id: req.body.id,
         }
       })
       .then(function (dbSite) {
-        res.json(dbSite);
+        res.render("/provider");
       }).catch(function (err) {
         res.json(err);
       })
