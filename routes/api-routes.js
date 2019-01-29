@@ -119,8 +119,8 @@ module.exports = function (app) {
 
   //***********setting up for delete on site********
   // this route should delete a contact from the table, if the id matches the ':id' url param
-  app.delete("/api/site/:id", function (req, res) {
-    console.log("hit delete /api/site page");
+  app.delete("/api/sane_results/:id", function (req, res) {
+    console.log("hit delete /api/sane_results page");
     db.Site.destroy({
       where: {
         id: req.params.id
