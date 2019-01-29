@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log("in signup.js");
+
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var first_name = $("input#first_name");
@@ -9,7 +9,7 @@ $(document).ready(function() {
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
-    console.log("in submit on signup.js");
+    console.log("in submit signup form on signup.js");
     event.preventDefault();
     var userData = {
       first_name: first_name.val().trim(),
@@ -17,7 +17,7 @@ $(document).ready(function() {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-    console.log(userData, "user in signup.js");
+    console.log(userData);
     if (!userData.first_name || !userData.last_name || !userData.email || !userData.password) {
       return;
     }
@@ -32,7 +32,6 @@ $(document).ready(function() {
   // Does a post to the signup route. If successful, we are redirected to the provider page
   // Otherwise we log any errors
   function signUpUser(first_name, last_name, email, password) {
-    console.log("hit api/signup in signup.js");
     $.post("/api/signup", {
       first_name: first_name,
       last_name: last_name,
@@ -41,7 +40,6 @@ $(document).ready(function() {
     }).then(function(data) {
       window.location.replace(data);
       location.href = "login";
-      // If there's an error, handle it by throwing up a bootstrap alert
     }).catch(handleLoginErr);
   }
 

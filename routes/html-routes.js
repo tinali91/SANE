@@ -32,7 +32,7 @@ module.exports = function (app) {
 // *****************************************************************
   // Here we've add our isAuthenticated middleware to this route.
   app.get("/provider",
-    // isAuthenticated, 
+    isAuthenticated, 
     function (req, res) {
       console.log("signed in");
       db.Site.findAll({
@@ -54,15 +54,23 @@ module.exports = function (app) {
       });
     });
     
-  app.get("/update",
-    // isAuthenticated, 
+  app.get("/update/:id",
+    isAuthenticated, 
     function (req, res) {
-      console.log("hit /update page")
-      res.render("update");
-    })
+      db.Site.findOne(
+        {
+          where: {
+            id: req.params.id,
+          }
+        }).then(function(dbSite){
+          console.log(dbSite.dataValues, "dbSite in find one update");
+          res.render("update", {site: dbSite.dataValues});
+        })
+
+    });
 
   app.get("/create",
-    // isAuthenticated, 
+    isAuthenticated, 
     function (req, res) {
       console.log("hit /create page")
       res.render("create");
