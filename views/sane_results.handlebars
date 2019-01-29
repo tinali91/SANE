@@ -4,21 +4,19 @@
 	<div>
 		<h3> Sites:</h3>
 	</div>
-
 	<div class="row">
-		<div class="col m1">
-		</div>
-		<div class="col m10">
+		<div class="col s12">
+
 			<table class="striped">
 				<thead>
 					<tr>
 						<th>Facility</th>
 						<th>Address</th>
 						<th>City/Town</th>
-						<th>County</th>
+						{{!-- <th>County</th> --}}
 						<th>Zip</th>
 						<th>Phone #1</th>
-						<th>Phone #2</th>
+						{{!-- <th>Phone #2</th> --}}
 						<th>Website</th>
 						<th>Additional Info</th>
 					</tr>
@@ -26,22 +24,22 @@
 
 				<tbody>
 					{{#each sites}}
-					<tr>
-						<td> {{this.facility}} </td>
-						<td> {{this.address}} </td>
-						<td> {{this.city}} </td>
-						<td> {{this.county}} </td>
-						<td> {{this.zip}} </td>
-						<td> {{this.phone_1}} </td>
-						<td> {{this.phone_2}} </td>
-						<td> <a href="{{this.website}}">{{this.website}}</a></td>
-						<td> {{this.additional_info}} </td>
+					<tr class="collection">
+						<td class="collection-item avatar"> {{this.facility}} </td>
+						<td class="collection-item avatar"> {{this.address}} </td>
+						<td class="collection-item avatar"> {{this.city}} </td>
+						{{!-- <td> {{this.county}} </td> --}}
+						<td class="collection-item avatar"> {{this.zip}} </td>
+						<td class="collection-item avatar"> {{this.phone_1}} </td>
+						{{!-- <td> {{this.phone_2}} </td> --}}
+						<td class="collection-item avatar"> <a href="{{this.website}}">{{this.website}}</a></td>
+						<td class="collection-item avatar"> {{this.additional_info}} </td>
 					</tr>
 					{{/each}}
 				</tbody>
 			</table>
 		</div>
-		<div class="col m1">
-		</div>
+		{{!-- <div class="col m1">
+		</div> --}}
 	</div>
 </div>
