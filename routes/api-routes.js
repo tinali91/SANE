@@ -93,6 +93,30 @@ module.exports = function (app) {
     })
   });
 
+  app.post("/api/sane_results", function (req, res) {
+    console.log("hit /api/sane_results post page");
+    db.Site.create({
+      country: req.body.country,
+      state: req.body.state,
+      county: req.body.county,
+      city: req.body.city,
+      facility: req.body.facility,
+      address: req.body.address,
+      zip: req.body.zip,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      phone_1: req.body.phone_1,
+      phone_2: req.body.phone_2,
+      website: req.body.website,
+      other_info: req.body.other_info
+    }).then(function (dbSite) {
+      res.render("provider");
+    }).catch(function (err) {
+      console.log(err);
+      res.json(err);
+    })
+  });
+
   //***********setting up for delete on site********
   // this route should delete a contact from the table, if the id matches the ':id' url param
   app.delete("/api/site/:id", function (req, res) {
