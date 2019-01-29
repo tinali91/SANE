@@ -6,3 +6,16 @@ $(document).ready(function() {
   });
 });
 
+$("#delete").on("click", function() {
+  var id = $(this).parents("tr").attr("data-id");
+  alert(id);
+
+  $.ajax({
+      method: "DELETE",
+      url: `/api/sane_results/${id}`
+  }).then(function(dbSite) {
+      console.log("result deleted", dbSite);
+      location = location;
+  })
+})
+

@@ -1,5 +1,3 @@
-{{!-- This is the form where providers can view their information and update it. --}}
-
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
@@ -30,7 +28,6 @@
 
 <div class="container">
   <h3> Sites:</h3>
-
   <table class="striped">
     <thead>
       <tr>
@@ -43,12 +40,13 @@
         <th>Phone #2</th>
         <th>Website</th>
         <th>Additional Info</th>
+        <th>Delete</th>
       </tr>
     </thead>
 
     <tbody>
       {{#each sites}}
-      <tr class="collection">
+      <tr class="collection" data-id="{{id}}"> 
         <td class="collection-item avatar"> {{this.facility}} </td>
         <td class="collection-item avatar"> {{this.address}} </td>
         <td class="collection-item avatar"> {{this.city}} </td>
@@ -58,10 +56,10 @@
         <td class="collection-item avatar"> {{this.phone_2}} </td>
         <td class="collection-item avatar"> <a href="{{this.website}}">{{this.website}}</a></td>
         <td class="collection-item avatar"> {{this.additional_info}} </td>
+        <td><button></button><i id="delete" class="material-icons">clear</i></td>
       </tr>
       {{/each}}
       {{!-- Our Handlebars code goes here! --}}
-      {{!-- <td><span class="delete glyphicon glyphicon-remove"></span></td> --}}
     </tbody>
   </table>
 </div>
