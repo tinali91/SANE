@@ -139,11 +139,11 @@ module.exports = function (app) {
     db.Site.update(req.body,
       {
         where: {
-          id: req.body.id,
+          id: req.params.id,
         }
       })
       .then(function (dbSite) {
-        res.render("/provider");
+        res.render("provider");
       }).catch(function (err) {
         res.json(err);
       })

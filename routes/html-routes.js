@@ -54,12 +54,20 @@ module.exports = function (app) {
       });
     });
     
-  app.get("/update",
+  app.get("/update/:id",
     isAuthenticated, 
     function (req, res) {
-      console.log("hit /update page")
-      res.render("update");
-    })
+      db.Site.findOne(
+        {
+          where: {
+            id: req.params.id,
+          }
+        }).then(function(dbSite){
+          console.log(dbSite.dataValues, "dbSite in find one update");
+          res.render("update", {site: dbSite.dataValues});
+        })
+
+    });
 
   app.get("/create",
     isAuthenticated, 

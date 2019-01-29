@@ -23,9 +23,26 @@ $(document).ready(function() {
     $("#first_name").text(data.first_name);
   });
 
-  $(".updateSite").on("click", function() {
+  var updateForm = $("form.updateSite");
+  var country = $("#country");
+  var state = $("#state");
+  var county = $("#county");
+  var city = $("#city");
+  var facility = $("#facility");
+  var address = $("#address");
+  var zip = $("#zip");
+  var latitude = $("#latitude");
+  var longitude = $("#longitude");
+  var phone_1 = $("#phone_1");
+  var phone_2 = $("#phone_2");
+  var website = $("#website");
+  var other_info = $("#other_info");
+
+  $(".updateSite").on("submit", function(event) {
+    event.preventDefault();
     console.log("hit updateSite button");
-    var id = $(this).parents("li").attr("data-id");
+    var id = $(this).data("value");
+    console.log(id, "looking for id");
     // confirm("You would like to update site #" + id);
     var updateData = {
       country: country.val().trim(),
@@ -44,8 +61,9 @@ $(document).ready(function() {
     };
     console.log(updateData, "updateData in provider.js");
     $.ajax({
-        method: "UPDATE",
-        url: `/api/sane_results/${id}`
+        method: "PUT",
+        url: `/api/sane_results/${id}`,
+        data: updateData,
     }).then(function(dbSite) {
         console.log("result updated", dbSite);
         window.location.href = "/provider";
