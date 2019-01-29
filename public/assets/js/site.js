@@ -39,15 +39,6 @@ $(".create").on("submit", function (event) {
     other_info: other_info.val().trim()
   };
   console.log(siteData, "user in site.js");
-  // if (!siteData.facility || !siteData.address || !siteData.phone_1 || !siteData.website) {
-  //   return;
-  // }
-  // // If we have an email and password, run the signUpUser function
-  // createSite(siteData.facility, siteData.address, siteData.phone_1, siteData.website);
-  // facility.val("");
-  // address.val("");
-  // phone_1.val("");
-  // website.val("");
 
   $.ajax({
     method: "POST",
