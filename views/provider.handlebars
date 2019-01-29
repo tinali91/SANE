@@ -48,16 +48,16 @@
 
     <tbody>
       {{#each sites}}
-      <tr>
-        <td> {{this.facility}} </td>
-        <td> {{this.address}} </td>
-        <td> {{this.city}} </td>
-        <td> {{this.county}} </td>
-        <td> {{this.zip}} </td>
-        <td> {{this.phone_1}} </td>
-        <td> {{this.phone_2}} </td>
-        <td> <a href="{{this.website}}">{{this.website}}</a></td>
-        <td> {{this.additional_info}} </td>
+      <tr class="collection">
+        <td class="collection-item avatar"> {{this.facility}} </td>
+        <td class="collection-item avatar"> {{this.address}} </td>
+        <td class="collection-item avatar"> {{this.city}} </td>
+        <td class="collection-item avatar"> {{this.county}} </td>
+        <td class="collection-item avatar"> {{this.zip}} </td>
+        <td class="collection-item avatar"> {{this.phone_1}} </td>
+        <td class="collection-item avatar"> {{this.phone_2}} </td>
+        <td class="collection-item avatar"> <a href="{{this.website}}">{{this.website}}</a></td>
+        <td class="collection-item avatar"> {{this.additional_info}} </td>
       </tr>
       {{/each}}
       {{!-- Our Handlebars code goes here! --}}
