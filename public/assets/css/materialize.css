@@ -3131,9 +3131,9 @@ td, th {
   right: 16px;
 }
 
-.collection .collection-item:last-child {
+/* .collection .collection-item:last-child {
   border-bottom: none;
-}
+} */
 
 .collection .collection-item.active {
   background-color: #26a69a;

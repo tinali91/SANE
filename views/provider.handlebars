@@ -1,23 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span id="first_name"></span></h2>
+      <h2>Welcome <span id="first_name"></span></h2>
     </div>
   </div>
   {{!-- PART OF MVP, MUST HAVE WORKING --}}
   <div class="row">
-        <div class="col s3">
-            <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
-        </div>
-        <div class="col s3">
-            <a class="button btn btn-primary" href="/update" role="button">Update Site</a>
-        </div>
-        <div class="col s3">
-            <a class="button btn btn-primary" href="/create" role="button">New Site</a>
-        </div>
-        <div class="col s3">
-            <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
-        </div>
+    <div class="col s4">
+      <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
+    </div>
+    <div class="col s4">
+      <a class="button btn btn-primary" href="/create" role="button">New Site</a>
+    </div>
+    <div class="col s4">
+      <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
+    </div>
   </div>
 </div>
 
@@ -28,38 +25,31 @@
 
 <div class="container">
   <h3> Sites:</h3>
-  <table class="striped">
-    <thead>
-      <tr>
-        <th>Facility</th>
-        <th>Address</th>
-        <th>City/Town</th>
-        <th>County</th>
-        <th>Zip</th>
-        <th>Phone #1</th>
-        <th>Phone #2</th>
-        <th>Website</th>
-        <th>Additional Info</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-
-    <tbody>
+  <div class="row">
+    <ul class="collection">
       {{#each sites}}
-      <tr class="collection" data-id="{{id}}"> 
-        <td class="collection-item avatar"> {{this.facility}} </td>
-        <td class="collection-item avatar"> {{this.address}} </td>
-        <td class="collection-item avatar"> {{this.city}} </td>
-        <td class="collection-item avatar"> {{this.county}} </td>
-        <td class="collection-item avatar"> {{this.zip}} </td>
-        <td class="collection-item avatar"> {{this.phone_1}} </td>
-        <td class="collection-item avatar"> {{this.phone_2}} </td>
-        <td class="collection-item avatar"> <a href="{{this.website}}">{{this.website}}</a></td>
-        <td class="collection-item avatar"> {{this.additional_info}} </td>
-        <td><button></button><i id="delete" class="material-icons">clear</i></td>
-      </tr>
+      <div class="col s12">
+        <li class="row collection-item avatar" data-id="{{this.id}}">
+          <div class="col s6">
+            <h3><span class="title">{{this.facility}}</span></h3>
+            <p>Address: {{this.address}}, {{this.city}}, {{this.zip}}<br>
+              Phone: {{this.phone_1}} <br>
+              Website: <a href="{{this.website}}">{{this.website}}</a><br>
+              Additional information: {{this.additional_info}}
+            </p>
+          </div>
+          <div class="col s6">
+            <center>
+              <a class="waves-effect waves-light btn update"><i class="material-icons">edit</i> update</a>
+              <a class="waves-effect waves-light btn delete"><i class="material-icons">delete</i> delete</a>
+            </center>
+          </div>
+        </li>
+      </div>
       {{/each}}
-      {{!-- Our Handlebars code goes here! --}}
-    </tbody>
-  </table>
+    </ul>
+  </div>
 </div>
+
+
+<script src="/assets/js/provider.js"></script>

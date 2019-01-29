@@ -13,7 +13,7 @@
 	font-size: inherit;
 }
 
-#sane-header, #update-header, h2, h3 {
+#sane-header, #update-header, h2, h3, h4 {
   margin: 0 !important;
   color: #944e32 !important;
 }
@@ -59,4 +59,11 @@ h4 {
   padding: 2%;
 }
 
+.delete, .update {
+  margin-top: 60px;
+}
 
+li {
+  border-bottom: 1px;
+  border-bottom-color: #70abaf;
+}

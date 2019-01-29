@@ -37,6 +37,7 @@ module.exports = function (app) {
       console.log("signed in");
       db.Site.findAll({
         attributes: [
+          "id",
           "facility",
           "county",
           "city",
@@ -83,6 +84,7 @@ module.exports = function (app) {
     // res.render("sane_results");
     db.Site.findAll({
       attributes: [
+        "id",
         "facility",
         "county",
         "city",
