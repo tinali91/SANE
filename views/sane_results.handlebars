@@ -4,6 +4,11 @@
 	</div>
 	<div class="row">
 		<div class="col s12">
+			<div id="map"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12">
 			<ul class="collection">
 				{{#each sites}}
 				<li class="collection-item avatar" data-id="{{this.id}}">
@@ -19,3 +24,8 @@
 		</div>
 	</div>
 </div>
+
+
+<script src="/assets/js/map.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoUsjFYl3W9K6s5G6qEhB7et701_uYIk8&callback=initMap">
+</script>
