@@ -73,3 +73,14 @@ li {
   height: 500px;
   width: 100%;
 }
+
+.foot-head {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.foot-header {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 3px;
+}
