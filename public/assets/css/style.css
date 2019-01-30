@@ -67,3 +67,9 @@ li {
   border-bottom: 1px;
   border-bottom-color: #70abaf;
 }
+
+
+#map {
+  height: 500px;
+  width: 100%;
+}
