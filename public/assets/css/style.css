@@ -41,8 +41,7 @@ body {
 
 .btn {
   background-color: #70abaf !important;
-  margin: 3%;
-
+  margin-top: 5px; 
 }
 
 .page-footer {
@@ -60,6 +59,7 @@ h4 {
 }
 
 .delete, .update {
+  padding-bottom: 40px;
   margin-top: 60px;
 }
 
