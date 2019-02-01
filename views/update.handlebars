@@ -1,110 +1,110 @@
 {{!-- Providers can update their existing information here --}}
 {{!-- This is extra credit, probably not MVP --}}
-
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h2>Welcome <span id="first_name"></span></h2>
-            </div>
-        </div>
-        {{!-- PART OF MVP, MUST HAVE WORKING --}}
-        <div class="row">
-            <div class="col s4">
-                <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
-            </div>
-            <div class="col s4">
-                <a class="button btn btn-primary" href="/create" role="button">New Site</a>
-            </div>
-            <div class="col s4">
-                <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
-            </div>
+<main>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h2>Welcome <span id="first_name"></span></h2>
         </div>
     </div>
-    <!-- </nav> -->
-    <div class="container">
-        <h5 class="header col s12 light update-info">Please enter the new SANE site information below.</h5>
-        <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
-        <div class="row">
-            <form class="updateSite" data-value="{{site.id}}">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="country" type="text" class="form-control" class="validate" value="{{site.country}}">
-                        <label for="country">Country</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="state" type="text" class="form-control" class="validate" value="{{site.state}}">
-                        <label for="state">State</label>
-                    </div>
+    {{!-- PART OF MVP, MUST HAVE WORKING --}}
+    <div class="row">
+        <div class="col s4">
+            <a class="button btn btn-primary" href="/provider" role="button">Main Page</a>
+        </div>
+        <div class="col s4">
+            <a class="button btn btn-primary" href="/create" role="button">New Site</a>
+        </div>
+        <div class="col s4">
+            <a class="button btn btn-primary" href="/logout" role="button">Logout</a>
+        </div>
+    </div>
+</div>
+<!-- </nav> -->
+<div class="container">
+    <h5 class="header col s12 light update-info">Please enter the new SANE site information below.</h5>
+    <h5 class="header col s12 light update-info">This information will be shared with those searching for a SANE.</h5>
+    <div class="row">
+        <form class="updateSite" data-value="{{site.id}}">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="country" type="text" class="form-control" class="validate" value="{{site.country}}">
+                    <label for="country">Country</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="county" type="text" class="form-control" class="validate" value="{{site.county}}">
-                        <label for="county">County</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="city" type="text" class="form-control" class="validate" value="{{site.city}}">
-                        <label for="city">City</label>
-                    </div>
+                <div class="input-field col s6">
+                    <input id="state" type="text" class="form-control" class="validate" value="{{site.state}}">
+                    <label for="state">State</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">healing</i>
-                        <input id="facility" type="text" class="validate" value="{{site.facility}}">
-                        <label for="facility">Facility</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="county" type="text" class="form-control" class="validate" value="{{site.county}}">
+                    <label for="county">County</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s9">
-                        <input id="address" type="text" class="validate" value="{{site.address}}">
-                        <label for="address">Address</label>
-                    </div>
-                    <div class="input-field col s3">
-                        <input id="zip" type="text" class="validate" value="{{site.zip}}">
-                        <label for="zip">Zip</label>
-                    </div>
+                <div class="input-field col s6">
+                    <input id="city" type="text" class="form-control" class="validate" value="{{site.city}}">
+                    <label for="city">City</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">gps_fixed</i>
-                        <input id="latitude" type="text" class="validate" value="{{site.latitude}}">
-                        <label for="latitude">Latitude</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">gps_fixed</i>
-                        <input id="longitude" type="text" class="validate" value="{{site.longitude}}">
-                        <label for="longitude">Longitude</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">healing</i>
+                    <input id="facility" type="text" class="validate" value="{{site.facility}}">
+                    <label for="facility">Facility</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone_1" type="text" class="validate" value="{{site.phone_1}}">
-                        <label for="phone_1">Phone #1</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">phone</i>
-                        <input id="phone_2" type="text" class="validate" value="{{site.phone_2}}">
-                        <label for="phone_2">Phone #2</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s9">
+                    <input id="address" type="text" class="validate" value="{{site.address}}">
+                    <label for="address">Address</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">public</i>
-                        <input id="website" type="text" class="validate" value="{{site.website}}">
-                        <label for="website">Website</label>
-                    </div>
+                <div class="input-field col s3">
+                    <input id="zip" type="text" class="validate" value="{{site.zip}}">
+                    <label for="zip">Zip</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">mode_edit</i>
-                        <textarea id="other_info" class="materialize-textarea" value="{{site.other_info}}"></textarea>
-                        <label for="other_info">Additional Information</label>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">gps_fixed</i>
+                    <input id="latitude" type="text" class="validate" value="{{site.latitude}}">
+                    <label for="latitude">Latitude</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">gps_fixed</i>
+                    <input id="longitude" type="text" class="validate" value="{{site.longitude}}">
+                    <label for="longitude">Longitude</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone_1" type="text" class="validate" value="{{site.phone_1}}">
+                    <label for="phone_1">Phone #1</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="phone_2" type="text" class="validate" value="{{site.phone_2}}">
+                    <label for="phone_2">Phone #2</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">public</i>
+                    <input id="website" type="text" class="validate" value="{{site.website}}">
+                    <label for="website">Website</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="other_info" class="materialize-textarea" value="{{site.other_info}}"></textarea>
+                    <label for="other_info">Additional Information</label>
+                </div>
                 <center>
                     <input type="submit" id="updateSite" class="btn btn-default" value="Update Site">
                 </center>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
+</div>
+</main>

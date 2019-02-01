@@ -4,18 +4,28 @@
  * the core Materialize files in the future
  *
  * Made By MaterializeCSS.com
- */
+ *
+
+
+ /* ***************************** */
+ /* This creates the sticky footer which always stays at the bottom of the page */
+ /* Must also tag <main></main> on each html page on body */
+ body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+} 
+main {
+  flex: 1 0 auto;
+}
+/* **************************** */
+
 
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
-}
-
-#sane-header, #update-header, h2, h3, h4 {
-  margin: 0 !important;
-  color: #944e32 !important;
 }
 
 .update-info {
@@ -25,7 +35,7 @@
 
 body {
   background-color: #f9f9f9;
-}
+} 
 
 .light-blue.lighten-1 {
   background-color: #70abaf !important;
@@ -53,10 +63,10 @@ form.login {
   margin-top: 50px;
 }
 
-h4 {
+/* h4 {
   clear: both;
   padding: 2%;
-}
+} */
 
 .delete, .update {
   padding-bottom: 40px;
@@ -74,13 +84,25 @@ li {
   width: 100%;
 }
 
-.foot-head {
+/* .foot-head {
   font-size: 1.2rem;
   font-weight: bold;
-}
+} */
 
-.foot-header {
+/* .foot-header {
   font-size: 1.6rem;
   font-weight: bold;
   margin-top: 3px;
+} */
+
+#sane-header {
+  color:  #944e32 !important;
 }
+  
+h2 {
+  color:  #944e32 !important;
+}
+/* alternative color idea for footer/accent */
+/* #sane-header {
+  color: #79818b !important;  
+} */
